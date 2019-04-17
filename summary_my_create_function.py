@@ -21,29 +21,6 @@ def basic_check(df):
     print('各カラムのデータ型\n{}'.format(df.dtypes))
     display(df.head(), df.tail())
 
-
-def check_datafreme_info(df):
-    pd.set_option('display.max_rows', None)
-
-    types = np.array(df.dtypes)
-    null_cnt = df.isnull().sum()# Series型
-    null_per = round(((null_cnt / len(df)) * 100), 2)
-    unique_cnt = df.nunique()# Series型
-    unique_per =round(((unique_cnt / len(df)) * 100), 2)
-    unique = [df[col].unique() for col in df.columns]
-
-    columns = ['dtypes', 'null_cnt', 'null%', 'unique_cnt', 'unique%', 'unique']
-    # np.c_:array型を列方向に連結
-    # 参考:https://qiita.com/neka-nat@github/items/5aa2b4402d50b8791b8b
-    disp = pd.DataFrame(np.c_[types, null_cnt, null_per, unique_cnt, unique_per, unique],
-                        columns=columns,
-                        index=df.columns)
-
-    print('DataFrame shape: ', df.shape)
-    display(disp)
-
-    pd.reset_option('display.max_rows')
-
 def calc_pick(df, col):
     '''
     指定カラムに紐づいたレコード数と紐づいたレコード数の割合を算出する関数
