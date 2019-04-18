@@ -62,38 +62,16 @@ def freq_cnt (df):
 
     if  0.1 < df['std'] < 0.3:
         clas = 1
+        return clas
     elif 0.3 <= df['std'] < 0.5:
         clas = 2
+        return clas
     elif 0.5 <= df['std'] < 0.7:
         clas = 3
+        return clas
     elif 0.7 <= df['std'] < 0.9:
         clas = 4
-    elif 0.9 <= df['std'] < 1.1:
-        clas = 5
-    elif 1.1 <= df['std'] < 1.3:
-        clas =  6
-    elif 1.3 <= df['std'] < 1.5:
-        clas =  7
-    elif 1.5 <= df['std'] < 1.7:
-        clas =  8
-    elif 1.7 <= df['std'] < 1.9:
-        clas =  9
-    elif 1.9 <= df['std'] < 2.1:
-        clas =  10
-    elif 2.1 <= df['std'] < 2.3:
-        clas =  11
-    elif 2.3 <= df['std'] < 2.5:
-        clas =  12
-    elif 2.5 <= df['std'] < 2.7:
-        clas =  13
-    elif 2.7 <= df['std'] < 2.9:
-        clas =  14
-    elif 2.9 <= df['std'] < 3.1:
-        clas =  15
-    elif 3.1 <= df['std'] :
-        clas =  16
-
-    return clas
+        return clas
 
 
 '''度数分布表を作成する関数'''
