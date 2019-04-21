@@ -95,14 +95,17 @@ def create_frequency_distribution(df, col, rename_col):
 
     return df
 
-'''度数分布表(カラム名昇順バージョン)を作成する関数'''
+
 def create_frequency_distribution_sort_col(df, col, rename_col):
     '''
-    df:該当データフレーム
-    col:度数、累積度数、相対度数、累積相対度数を算出したいカラム
-    rename_col:reset_indexメソッド後にカラム名[index]から変更したい「名称」
-
-    使い方：create_frequency_distribution(df, 'original_type', '単語')
+    関数内容
+    ・度数分布表(カラム名昇順バージョン)を作成する関数
+    Input
+    ・df:該当データフレーム
+    ・col:度数、累積度数、相対度数、累積相対度数を算出したいカラム
+    ・rename_col:reset_indexメソッド後にカラム名[index]から変更したい「名称」
+    関数使用方法
+    ・create_frequency_distribution(df, 'original_type', '単語')
     '''
     df = df[col].value_counts().reset_index().rename(columns={'index':rename_col, col:'度数'}).sort_values(rename_col)
     df['累積度数'] = df['度数'].cumsum()
