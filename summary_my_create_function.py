@@ -116,16 +116,18 @@ def create_frequency_distribution_sort_col(df, col, rename_col):
 
 
 
-'''パレート図を描画する関数'''
+
 def create_pareto_chart(df, col, fontsize, rotation):
     '''
-    df:データフレーム
-    col:x軸にしたいカラム
-    fontsize:x軸、y軸の目盛り、ラベルの文字サイズ
-    rotation:x軸ラベルの文字の回転角度
-
-    使い方:create_pareto_chart(freq_micro_meishi_df, '品詞小分類', 18, 90)
-
+    関数内容
+    ・パレート図を描画する関数
+    Input
+    ・df:データフレーム
+    ・col:x軸にしたいカラム
+    ・fontsize:x軸、y軸の目盛り、ラベルの文字サイズ
+    ・rotation:x軸ラベルの文字の回転角度
+    関数使用方法
+    ・create_pareto_chart(freq_micro_meishi_df, '品詞小分類', 18, 90)
     '''
     plt.rcParams['font.size'] = fontsize#x軸y軸の文字サイズを調整
 
