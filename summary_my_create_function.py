@@ -147,12 +147,14 @@ def create_pareto_chart(df, col, fontsize, rotation):
     ax2.set_yticks([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
 
 
-'''2つの棒グラフを並べて可視化する関数'''
+
 def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_label, y_label, legend1, legend2, fontsize=18):
     '''
-    使い方：compare_bar_graph(
-    freq_u_buy_df, freq_u_sell_df, '格付_buy', '格付_sell', '度数', '度数',
-    [i for i in range(1,11)], '格付', '企業数', '企業数(買収側)', '企業数(被買収側)'
+    関数内容
+    ・2つの棒グラフを並べて可視化する関数
+    関数使用方法
+    ・compare_bar_graph(freq_u_buy_df, freq_u_sell_df, '格_b', '格_s', '度数', '度数',
+    [i for i in range(1,11)], '格', '企業数', '企業数(b側)', '企業数(s側)'
     )
     '''
     df = df.astype({x_col:int}).sort_values(x_col)
