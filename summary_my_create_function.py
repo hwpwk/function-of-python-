@@ -197,11 +197,15 @@ def complement_na_from_oneside_3col(df, col1, col2, col3, new_col):
     return df
 
 
-'''2つのカラムの組み合わせが重複かどうかを判定する関数'''
+
 def judge_duplication_of_two_columns(df, col1, col2, col3):
     '''
-    co1, col2:重複判定したい2カラム
-    col3:カウントしたいカラム(重複判定したいだけなのでdfに格納されているどのカラムでも問題ない)
+    関数内容
+    ・2つのカラムの組み合わせが重複かどうかを判定する関数
+    Input
+    ・co1, col2:重複判定したい2カラム
+    ・col3:カウントしたいカラム(重複判定したいだけなのでdfに格納されているどのカラムでも問題ない)
+    
     '''
     if len(df) == len(df.groupby([col1, col2])[[col3]].count()):
         print(col1 + 'と' + col2 +'の組み合わせに重複はありません。')
