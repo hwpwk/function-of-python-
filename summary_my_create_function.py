@@ -212,10 +212,13 @@ def judge_duplication_of_two_columns(df, col1, col2, col3):
     else:
         print(col1 + 'と' + col2 +'の組み合わせに重複があります。')
 
-'''2つの棒グラフを並べて可視化する関数'''
+
 def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_label, y_label, legend1, legend2, int_flag, fontsize=18, rotation=90):
     '''
-    使い方：compare_bar_graph(
+    関数内容
+    ・2つの棒グラフを並べて可視化する関数
+    関数使用方法
+    ・compare_bar_graph(
     f_macro_buy_df, f_macro_sell_df, '大分類名_buy', '大分類名_sell', '度数', '度数', None,
     '大分類名', '企業数', '企業数(買収側)', '企業数(被買収側)', False
     )
