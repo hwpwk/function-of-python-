@@ -183,15 +183,18 @@ def complement_na_from_oneside(df, col1, col2, new_col):
     関数内容
     ・あるカラムの欠損値を別のカラムの要素で補完する関数
     関数使用方法
-    ・merge_df2 = complement_na_from_oneside(merge_df, '業種コード_z', '業種コード_c', '業種_小分類')
-    ・merge_df2 = complement_na_from_oneside(merge_df2, 'GCIF番号', 'GCIF', 'GCIF番号_new').rename(columns={'GCIF番号_new':'GCIF番号'})
+    ・merge_df2 = complement_na_from_oneside(merge_df, 'コード_z', 'コード_c', '小分類')
+    ・merge_df2 = complement_na_from_oneside(merge_df2, 'G番号', 'G', 'G番号_new').rename(columns={'G番号_new':'G番号'})
     '''
     df[new_col] = np.where(df[col1].notnull(), df[col1], np.where(df[col2].notnull(), df[col2], np.nan))
     df = df.drop([col1, col2], axis=1)# 補完に使ったカラム、元のカラムを削除
     return df
 
 def complement_na_from_oneside_3col(df, col1, col2, col3, new_col):
-    '''あるカラムの欠損値を別のカラムの要素で補完する関数'''
+    '''
+    関数内容
+    ・あるカラムの欠損値を別のカラムの要素で補完する関数
+    '''
     df[new_col] = np.where(df[col1].notnull(), df[col1], np.where(df[col2].notnull(), df[col2], np.where(df[col3].notnull(), df[col3], np.nan)))
     df = df.drop([col1, col2, col3], axis=1)# 補完に使ったカラム、元のカラムを削除
     return df
