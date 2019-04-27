@@ -251,11 +251,14 @@ def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_labe
     labels=[legend1, legend2]
     plt.legend(labels)
 
-'''2つの度数の割合を縦&横棒グラフで可視化する関数'''
+
 def create_frequency_ratio_graph(df, set_index_col, ratio_col1, ratio_col2, sort_col, y_label, tate_yoko_flag, tate_size, yoko_size, int_flag, fontsize=18):
     '''
-    使い方(縦棒グラフ選択)：create_frequency_ratio_graph(f_merge_df, '大分類名', 'buy_ratio', 'sell_ratio', None, '企業数の割合', 'tate', 15, 10, False)
-    使い方(横棒グラフ選択)：create_frequency_ratio_graph(f_merge_df2, '中分類名', 'buy_ratio', 'sell_ratio', '度数_buy', '企業数の割合', 'yoko', 15, 30, False)
+    関数内容
+    ・2つの度数の割合を縦&横棒グラフで可視化する関数
+    関数使用方法
+    ・縦棒グラフ選択：create_frequency_ratio_graph(f_merge_df, '大分類名', 'buy_ratio', 'sell_ratio', None, '企業数の割合', 'tate', 15, 10, False)
+    ・横棒グラフ選択：create_frequency_ratio_graph(f_merge_df2, '中分類名', 'buy_ratio', 'sell_ratio', '度数_buy', '企業数の割合', 'yoko', 15, 30, False)
     '''
     font_size = fontsize
     graph_params = {
