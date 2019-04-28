@@ -294,17 +294,16 @@ def create_frequency_ratio_graph(df, set_index_col, ratio_col1, ratio_col2, sort
 def check_string_length(df, col, threshold, num_of_display):
 
     '''
-    指定カラム(object型)の各要素の文字列の長さを閾値として、閾値未満のレコードのみ抽出する関数
-    (同時に行列数、先頭から指定行数のレコードも表示する)
+    関数内容
+    ・指定カラム(object型)の各要素の文字列の長さを閾値として、閾値未満のレコードのみ抽出する関数(同時に行列数、先頭から指定行数のレコードも表示する)
+    Input
+    ・df:データフレーム(予め文字列の長さを確認したいカラムの欠損値を削除している状態が望ましい)
+    ・col:各要素の文字列の長さを算出したいカラム
+    ・threshold:文字列の長さの閾値(この数値未満のレコードを抽出する)
+    ・num_of_display:先頭から表示したいレコード数
 
-    args
-        df:データフレーム(予め文字列の長さを確認したいカラムの欠損値を削除している状態が望ましい)
-        col:各要素の文字列の長さを算出したいカラム
-        threshold:文字列の長さの閾値(この数値未満のレコードを抽出する)
-        num_of_display:先頭から表示したいレコード数
-
-    使い方
-        check_string_length(zeus_df1, '業種コード', 5, 10)
+    関数使用方法
+    ・check_string_length(df, 'コード', 5, 10)
     '''
 
     df['文字列の長さ'] = df[col].map(lambda x: len(str(x)))
