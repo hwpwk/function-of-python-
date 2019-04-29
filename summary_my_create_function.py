@@ -222,8 +222,8 @@ def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_labe
     ・2つの棒グラフを並べて可視化する関数
     関数使用方法
     ・compare_bar_graph(
-    f_macro_buy_df, f_macro_sell_df, '大分類名_buy', '大分類名_sell', '度数', '度数', None,
-    '大分類名', '企業数', '企業数(買収側)', '企業数(被買収側)', False
+    f_macro_buy_df, f_macro_sell_df, '分類名_b', '分類名_s', '度数', '度数', None,
+    '分類名', '企業数', '企業数(買側)', '企業数(被買側)', False
     )
     '''
     if int_flag is True:
