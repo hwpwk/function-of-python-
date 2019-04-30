@@ -315,10 +315,14 @@ def check_string_length(df, col, threshold, num_of_display):
 
 
 def change_micro_code_from_string_length(df, threshold=5):
-    '''文字列の長さが閾値未満(デフォルト5文字未満)ならば[業種_小分類]カラムの要素を[業種コード]の要素に変える関数'''
+    '''
+    関数内容
+    ・文字列の長さが閾値未満(デフォルト5文字未満)ならば[業種1]カラムの要素を[コード]の要素に変える関数
+    
+    '''
 
     if df['文字列の長さ'] < threshold:
-        df['業種_小分類'] = df['業種コード']
+        df['業種1'] = df['コード']
     else:
         pass
 
