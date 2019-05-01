@@ -331,13 +331,14 @@ def change_micro_code_from_string_length(df, threshold=5):
 
 def get_normalized_text(text):
     '''
-    テキストの正規化を行う関数
+    関数内容
+    ・テキストの文字列の正規化を行う関数
 
-    args
-      text：テキスト文
+    Input
+    ・text：テキスト文(str型)
 
-    使い方
-      df['取引先名漢字'] = df['取引先名漢字'].progress_map(get_normalized_text)
+    関数使用方法
+    ・df['名称'] = df['名称'].progress_map(get_normalized_text)
     '''
 
     import neologdn
