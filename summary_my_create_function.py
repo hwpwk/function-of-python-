@@ -355,13 +355,13 @@ def get_normalized_text(text):
 
 def extract_contains_string_df(df, col, string):
     '''
-    指定カラムに特定文字が含まれているレコードのみ抽出する関数
+    関数内容
+    ・指定カラムに特定文字が含まれているレコードのみ抽出する関数
 
-    使い方
-        extract_contains_string_df(all_df2, '取引先名漢字', '口座')
-
-        del_list = ['口座', '工場', '幹事', '破産者']
-        kouza_df, koujyou_df, kanji_df, hasansha_df = [extract_contains_string_df(all_df2, '取引先名漢字', string) for string in del_list]
+    関数使用方法
+    ・extract_contains_string_df(all_df2, '取引先名', '口座')
+    　del_list = ['口座', '工', '幹', '破産']
+      kouza_df, kou_df, kan_df, hasan_df = [extract_contains_string_df(all_df2, '取引先名', string) for string in del_list]
 
     '''
 
