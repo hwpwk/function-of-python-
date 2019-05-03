@@ -370,15 +370,19 @@ def extract_contains_string_df(df, col, string):
     return out_df
 
 def diff_df_length(before_df, after_df):
-    '''削除したレコード数を確認する関数'''
+    '''
+    関数内容
+    ・削除したレコード数を確認する関数
+    '''
 
     display('削除したレコード数は{}レコードです。'.format(len(before_df) - len(after_df)))
 
 def save_excel(df, string, col='取引先名漢字'):
     '''
-    指定カラムに特定文字が含まれているレコードのみ抽出してxlsxファイルで出力する関数
+    関数内容
+    ・指定カラムに特定文字が含まれているレコードのみ抽出してxlsxファイルで出力する関数
 
-    arg
+    Input
       string:特定文字列 or 特定正規表現
     '''
 
