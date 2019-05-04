@@ -392,27 +392,19 @@ def save_excel(df, string, col='取引先名漢字'):
 
 def judge_include_value(df, value, base_col):
     '''
-    指定したカラムの値が別のカラムの値の中に含まれているかどうかを判定する関数
+    関数内容
+    ・指定したカラムの値が別のカラムの値の中に含まれているかどうかを判定する関数
 
-    Parameters
-    ----------
-    df :
-        該当データフレーム
-
-    value : str
-        含まれているかどうか判定したい値
-
-    base_col : str
-        カラム名(このカラムの値の中にvalueが含まれているかどうかを判定)
+    Input
+    ・df :該当データフレーム
+    ・value :含まれているかどうか判定したい値(str)
+    ・base_col : カラム名(このカラムの値の中にvalueが含まれているかどうかを判定)(str)
 
     Returns
-    -------
-    type : str
-        要素が含まれていれば「1」、含まれていなければ「0」を返す
+    ・type : 要素が含まれていれば「1」、含まれていなければ「0」を返す(str)
 
-    使い方
-    -------
-    df['flag'] = [judge_include_number(df, value, 'id_b') for value in df['id'].tolist()]
+    関数使用方法
+    ・df['flag'] = [judge_include_number(df, value, 'id_b') for value in df['id'].tolist()]
 
     '''
 
