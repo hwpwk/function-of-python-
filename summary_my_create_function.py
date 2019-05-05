@@ -416,11 +416,14 @@ def judge_include_value(df, value, base_col):
         return '0'
 
 def save_excel(df, string):
-    '''[取引先名漢字]カラムに特定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数'''
+    '''
+    関数内容
+    ・[取引先]カラムに特定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数
+    '''
 
-    out_df = df[df['取引先名漢字'].str.contains(string, na=False)]
+    out_df = df[df['取引先'].str.contains(string, na=False)]
 
-    return out_df[['取引先名漢字']].to_excel('取引先名漢字カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
+    return out_df[['取引先']].to_excel('取引先カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
 
 
 def save_col_name_df(df, name):
