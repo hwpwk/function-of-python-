@@ -452,8 +452,12 @@ def save_col_name_df(df, name):
 
     return col_df.head(), col_df.to_excel(name + 'のカラム一覧.xlsx', index=False)
 
-'''外れ値をnanに変換して削除する関数'''
+
 def exclude_outliers(df, col):
+    '''
+    関数内容
+    ・外れ値をnanに変換して削除する関数
+    '''
 
     # 第一四分位数、第三四分位数
     q1 = df[col].describe()['25%']
