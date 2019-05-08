@@ -694,27 +694,27 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
    
     '''買収側業種コードのユニークな要素をリストで抽出'''
     buy_list = df1[code_buy_col].drop_duplicates().tolist()
-    '''被買収側業種コードのユニークな要素をリストで抽出'''
+    '''売却側業種コードのユニークな要素をリストで抽出'''
     sell_list = df1[code_sell_col].drop_duplicates().tolist()
-    '''買収側業種コード、非買収側業種コードを比較し、どちらか一方にしかない値を抽出'''
+    '''買収側業種コード、売却側業種コードを比較し、どちらか一方にしかない値を抽出'''
     diff_set = set(buy_list)^set(sell_list)#2つのリストを比較し、重複していない要素のみ抽出
     diff_list = list(diff_set)#  set型をlist型に変換
     '''抽出した重複していない要素のうち、買収側業種コードに含まれていない要素のみ抽出'''
     diff_buy_list= list(set(diff_list) - set(buy_list))
-    '''抽出した重複していない要素のうち、被買収側業種コードに含まれていない要素のみ抽出'''
+    '''抽出した重複していない要素のうち、売却側業種コードに含まれていない要素のみ抽出'''
     diff_sell_list= list(set(diff_list) - set(sell_list))
-    '''買収側業種コード、非買収側業種コードに含まれていない要素の組み合わせの総当たりを抽出'''
+    '''買収側業種コード、売却側業種コードに含まれていない要素の組み合わせの総当たりを抽出'''
     import itertools
     buy_sell_list = [[x, y] for x, y in itertools.product(diff_buy_list, diff_sell_list)]
 
     '''組み合わせの総当たり分と各カラム=0(or 0.0)を格納したデータフレームを作成'''
     add_df = pd.DataFrame(buy_sell_list,
                           columns=[code_buy_col, code_sell_col])
-    add_df['MA件数'] = 0
+    add_df['件数'] = 0
     add_df['成約数'] = 0
-    add_df['売上高/資産合計_倍率'] = 0.0
+    add_df['倍率'] = 0.0
     add_df['成約率'] = 0.0
-    add_df['売上高/資産合計_倍率'] = add_df['売上高/資産合計_倍率'].astype(float)
+    add_df['倍率'] = add_df['倍率'].astype(float)
     add_df['成約率'] = add_df['成約率'].astype(float)
 
     '''新規作成したデータフレームを元のデータフレームに縦に連結'''
