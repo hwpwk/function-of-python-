@@ -724,7 +724,8 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
 
 def calc_groupby_median(df, col1, col2, main_col):
     '''
-    2つのカラム(col1,col2)の組み合わせ毎にMA件数、成約数、成約率、main_colに指定したカラムの中央値を算出する関数
+    関数内容
+    ・2つのカラム(col1,col2)の組み合わせ毎にMA件数、成約数、成約率、main_colに指定したカラムの中央値を算出する関数
     '''
 
     df = df[['success', col1, col2, main_col]]
