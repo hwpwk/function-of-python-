@@ -805,3 +805,19 @@ def calc_magnification(numerator_col, denominator_col):
         ratio = numerator_col / denominator_col
 
     return ratio
+
+
+def text_to_dataframe(text, separation, col_names:list):
+    '''
+    関数内容
+    ・txtファイルをデータフレームとして読み込む関数
+    Input
+    ・text：テキストファイル名
+    ・separation：タブ区切り('\t')orカンマ区切り(',')を指定
+    ・col_names：指定したいカラム名、リスト型で与える必要あり
+    関数使用方法
+    ・test_text = text_to_dataframe('neko.txt.ginza', '\t', ['index', 'surface', 'original', 'type'])
+    '''
+    text_df = pd.read_csv(text, sep=separation, names=col_names)
+
+    return text_df
