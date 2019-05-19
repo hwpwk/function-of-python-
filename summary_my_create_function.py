@@ -725,19 +725,19 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
 def calc_groupby_median(df, col1, col2, main_col):
     '''
     関数内容
-    ・2つのカラム(col1,col2)の組み合わせ毎にMA件数、成約数、成約率、main_colに指定したカラムの中央値を算出する関数
+    ・2つのカラム(col1,col2)の組み合わせ毎に件数、成約数、成約率、main_colに指定したカラムの中央値を算出する関数
     '''
 
     df = df[['success', col1, col2, main_col]]
-    df['MA件数'] = df['success']
+    df['件数'] = df['success']
     df['成約数'] = df['success']
 
-    df = df.groupby([col1, col2]).agg({'MA件数':'count', '成約数':'sum', main_col:'median'})
+    df = df.groupby([col1, col2]).agg({'件数':'count', '成約数':'sum', main_col:'median'})
 
-    df['成約率'] = df['成約数'] / df['MA件数']
+    df['成約率'] = df['成約数'] / df['件数']
 
     # MA件数の降順にする
-    df = df.reset_index().sort_values('MA件数', ascending=False)
+    df = df.reset_index().sort_values('件数', ascending=False)
 
 
     return df
