@@ -765,6 +765,10 @@ def create_mean_pivot_table(df, index, columns, values):
     return pivot_df
 
 def create_add_num_heatmap(pivot_df, context):
+    '''
+    関数内容
+    ・ヒートマップを描画する関数
+    '''
     sns.set_context(context)
     sns.heatmap(pivot_df.sort_index(ascending=False), annot=True, fmt='g', square=True, cmap = 'coolwarm')
 
