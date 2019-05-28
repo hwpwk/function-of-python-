@@ -45,11 +45,12 @@ def calc_kaikyu_sizewidth(df, col):
     スタージェスの公式（Sturges' formula）から階級の数を求める
     → 度数分布やヒストグラム作成時の階級数の目安を得られる公式。nをサンプル数、kを階級数として下記の式で求めることができる。
     → k=1+log2n
+　　Input
+    ・df:該当データフレーム
+    ・col:ヒストグラム描画時にx軸にしたいカラム
 
-    df:該当データフレーム
-    col:ヒストグラム描画時にx軸にしたいカラム
-
-    使い方：calc_kaikyu_sizewidth(std_df, 'std_tf_idf')
+    関数使用方法
+    ・calc_kaikyu_sizewidth(std_df, 'std_tf_idf')
     '''
     import math
     # 階級の数を算出
