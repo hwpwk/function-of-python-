@@ -90,7 +90,6 @@ def create_frequency_distribution(df, col, rename_col):
     ・df:該当データフレーム
     ・col:度数、累積度数、相対度数、累積相対度数を算出したいカラム
     ・rename_col:reset_indexメソッド後にカラム名[index]から変更したい「名称」
-
     関数使用方法
     ・create_frequency_distribution(df, 'original_type', '単語')
     '''
