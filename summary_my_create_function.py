@@ -201,7 +201,9 @@ def complement_na_from_oneside_3col(df, col1, col2, col3, new_col):
     ・あるカラムの欠損値を別のカラムの要素で補完する関数
     '''
     df[new_col] = np.where(df[col1].notnull(), df[col1], np.where(df[col2].notnull(), df[col2], np.where(df[col3].notnull(), df[col3], np.nan)))
-    df = df.drop([col1, col2, col3], axis=1)# 補完に使ったカラム、元のカラムを削除
+    # 補完に使ったカラム、元のカラムを削除
+    df = df.drop([col1, col2, col3], axis=1)
+    
     return df
 
 
