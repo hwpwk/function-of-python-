@@ -23,9 +23,11 @@ def basic_check(df):
 
 def calc_pick(df, col):
     '''
-    指定カラムに紐づいたレコード数と紐づいたレコード数の割合を算出する関数
-    df:データフレーム
-    col:カラム名
+    関数内容
+    ・指定カラムに紐づいたレコード数と紐づいたレコード数の割合を算出する関数
+    Input
+    ・df:データフレーム
+    ・col:カラム名
 
     '''
     print(col + 'カラムに紐づいたレコード数は{}'.format((len(df) - (df[col].isnull().sum()))))
