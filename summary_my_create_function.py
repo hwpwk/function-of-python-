@@ -521,7 +521,7 @@ def add_value_flag(df, name, raw_df, key_col):
       ・元のデータフレームに紐づいたかどうかを判定するフラグを付与したデータフレーム
 
     使い方
-    　tmp_merge_df = add_value_flag(tmp_df, 'dummy', tmp_raw_df, 'bCIF')
+    　tmp_merge_df = add_value_flag(tmp_df, 'dummy', tmp_raw_df, 'id')
     '''
 
     new_col = 'is_' + name + '_flag'
