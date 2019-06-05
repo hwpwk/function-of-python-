@@ -215,6 +215,7 @@ def judge_duplication_of_two_columns(df, col1, col2, col3):
     関数内容
     ・2つのカラムの組み合わせが重複かどうかを判定する関数
     Input
+    ・df:データフレーム
     ・co1, col2:重複判定したい2カラム
     ・col3:カウントしたいカラム(重複判定したいだけなのでdfに格納されているどのカラムでも問題ない)
     
