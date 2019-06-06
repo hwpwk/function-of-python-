@@ -130,7 +130,7 @@ def create_pareto_chart(df, col, fontsize, rotation):
     ・パレート図を描画する関数
     Input
     ・df:データフレーム
-    ・col:x軸にしたいカラム
+    ・col:x軸に指定したいカラム
     ・fontsize:x軸、y軸の目盛り、ラベルの文字サイズ
     ・rotation:x軸ラベルの文字の回転角度
     関数使用方法
