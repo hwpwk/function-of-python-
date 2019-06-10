@@ -665,7 +665,7 @@ def design_range(col, new_col, num, df=cross_df):
     ・cross_df = design_range('倍率', 'a_s_mag_cluster', 100)
     ※なお、この後にはクラスタの番号が倍率の大小を表していないのでクラスタに分ける前の値を昇順にしてからクラスタの名称を変更することが多い
     g_as_df = cross_df.groupby('a_s_mag_cluster')[['倍率']].mean().sort_values('倍率').reset_index()
-    g_as_df['資産合計/売上高_倍率クラスター'] = range(0, len(g_as_df))
+    g_as_df['資産/売上高_倍率クラスター'] = range(0, len(g_as_df))
     '''
 
     from sklearn.cluster import KMeans
