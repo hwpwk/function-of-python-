@@ -332,7 +332,7 @@ def change_micro_code_from_string_length(df, threshold=5):
     '''
 
     if df['文字列の長さ'] < threshold:
-        df['業種1'] = df['コード']
+        df['業種'] = df['コード']
     else:
         pass
 
