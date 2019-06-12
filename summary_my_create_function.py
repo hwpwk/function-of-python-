@@ -121,9 +121,6 @@ def create_frequency_distribution_sort_col(df, col, rename_col):
 
     return df
 
-
-
-
 def create_pareto_chart(df, col, fontsize, rotation):
     '''
     関数内容
@@ -152,8 +149,6 @@ def create_pareto_chart(df, col, fontsize, rotation):
     ax2 = ax1.twinx()
     ax2.plot(range(data_num), df['累積相対度数'], c="k", marker="o")
     ax2.set_yticks([0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
-
-
 
 def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_label, y_label, legend1, legend2, fontsize=18):
     '''
