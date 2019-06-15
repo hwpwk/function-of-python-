@@ -82,8 +82,6 @@ def freq_cnt (df):
         clas = 4
         return clas
 
-
-
 def create_frequency_distribution(df, col, rename_col):
     '''
     関数内容
