@@ -739,7 +739,7 @@ def calc_groupby_median(df, col1, col2, main_col):
 
     df['成約率'] = df['成約数'] / df['件数']
 
-    # MA件数の降順にする
+    # 件数の降順にする
     df = df.reset_index().sort_values('件数', ascending=False)
 
 
