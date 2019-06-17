@@ -28,7 +28,6 @@ def calc_pick(df, col):
     Input
     ・df:データフレーム
     ・col:カラム名
-
     '''
     print(col + 'カラムに紐づいたレコード数は{}'.format((len(df) - (df[col].isnull().sum()))))
     print(col + 'カラムに紐づいた割合は{:.2%}'.format((len(df) - (df[col].isnull().sum())) / len(df)))
