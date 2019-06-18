@@ -320,7 +320,8 @@ def change_micro_code_from_string_length(df, threshold=5):
     '''
     関数内容
     ・文字列の長さが閾値未満(デフォルト5文字未満)ならば[業種]カラムの要素を[コード]カラムの要素に変える関数
-    
+    Input
+    ・df:データフレーム
     '''
 
     if df['文字列の長さ'] < threshold:
