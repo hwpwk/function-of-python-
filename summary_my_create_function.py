@@ -34,6 +34,7 @@ def calc_pick(df, col):
 
 
 def calc_drop_df_pick(df, drop_df):
+    
     print('欠損値がないレコード数は{}'.format((len(drop_df))))
     print('欠損値がないレコード数の割合は{:.2%}'.format((len(drop_df)) / len(df)))
 
