@@ -10,7 +10,6 @@ def basic_check(df):
     
     Input
     ・df:データフレーム
-
     '''
     print('行と列の長さ\n{}'.format(df.shape))
     print('-'*50)
