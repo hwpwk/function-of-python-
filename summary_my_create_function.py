@@ -49,7 +49,6 @@ def calc_kaikyu_sizewidth(df, col):
 　　Input
     ・df:該当データフレーム
     ・col:ヒストグラム描画時にx軸にしたいカラム
-
     関数使用方法
     ・calc_kaikyu_sizewidth(std_df, 'std_tf_idf')
     '''
