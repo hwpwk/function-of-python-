@@ -301,7 +301,6 @@ def check_string_length(df, col, threshold, num_of_display):
     ・col:各要素の文字列の長さを算出したいカラム
     ・threshold:文字列の長さの閾値(この数値未満のレコードを抽出する)
     ・num_of_display:先頭から表示したいレコード数
-
     関数使用方法
     ・check_string_length(df, 'コード', 5, 10)
     '''
