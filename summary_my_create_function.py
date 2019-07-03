@@ -330,7 +330,6 @@ def get_normalized_text(text):
     '''
     関数内容
     ・テキストの文字列の正規化を行う関数
-
     Input
     ・text：テキスト文(str型)
 
