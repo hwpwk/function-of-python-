@@ -331,7 +331,6 @@ def get_normalized_text(text):
     ・テキストの文字列の正規化を行う関数
     Input
     ・text：テキスト文(str型)
-
     関数使用方法
     ・df['名称'] = df['名称'].progress_map(get_normalized_text)
     '''
