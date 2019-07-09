@@ -194,8 +194,6 @@ def complement_na_from_oneside_3col(df, col1, col2, col3, new_col):
     
     return df
 
-
-
 def judge_duplication_of_two_columns(df, col1, col2, col3):
     '''
     関数内容
