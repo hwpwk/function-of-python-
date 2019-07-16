@@ -158,8 +158,9 @@ def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_labe
 
     x2 = df1[x1_col]
     y2 = df1[y1_col]
-
-    plt.rcParams['font.size'] = fontsize#x軸y軸の文字サイズを調整
+    
+　　#x軸y軸の文字サイズを調整
+    plt.rcParams['font.size'] = fontsize
 
     plt.bar(x1, y1, color='b', width=-0.4, align='edge', alpha=0.4)
     plt.bar(x2, y2, color='r', width=0.4, align='edge', alpha=0.4)
