@@ -365,7 +365,6 @@ def diff_df_length(before_df, after_df):
     関数内容
     ・削除したレコード数を確認する関数
     '''
-
     display('削除したレコード数は{}レコードです。'.format(len(before_df) - len(after_df)))
 
 def save_excel(df, string, col='取引先名漢字'):
