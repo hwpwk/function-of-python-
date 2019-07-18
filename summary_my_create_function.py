@@ -93,7 +93,6 @@ def create_frequency_distribution(df, col, rename_col):
 
     return df
 
-
 def create_frequency_distribution_sort_col(df, col, rename_col):
     '''
     関数内容
