@@ -675,7 +675,7 @@ def combination_columns_name(col_list1, col_list2):
 def add_complement_df(df1, code_buy_col, code_sell_col):
     '''
     関数内容
-    ・buy側業種名とsell側業種名の要素が共通になるよう補完し、その補完分を元データフレームに追加する関数
+    ・買収側業種名と売却側業種名の要素が共通になるよう補完し、その補完分を元データフレームに追加する関数
     '''
    
     '''買収側業種コードのユニークな要素をリストで抽出'''
