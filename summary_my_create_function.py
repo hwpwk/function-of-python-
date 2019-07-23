@@ -733,7 +733,6 @@ def create_mean_pivot_table(df, index, columns, values):
     '''
     関数内容
     ・ピボットテーブルを作成する関数
-    
     '''
     pivot_df = pd.pivot_table(
         df,
