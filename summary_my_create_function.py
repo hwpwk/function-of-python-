@@ -322,7 +322,6 @@ def change_micro_code_from_string_length(df, threshold=5):
 
     return df
 
-
 def get_normalized_text(text):
     '''
     関数内容
