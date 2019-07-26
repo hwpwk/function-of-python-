@@ -331,7 +331,6 @@ def get_normalized_text(text):
     関数使用方法
     ・df['名称'] = df['名称'].progress_map(get_normalized_text)
     '''
-
     import neologdn
 
     #np.nanがstr型ではなくfloat型とされるためstr型以外はneologdn.normalizeメソッドを実施しないように条件分岐
