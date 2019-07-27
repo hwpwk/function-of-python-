@@ -284,7 +284,7 @@ def create_frequency_ratio_graph(df, set_index_col, ratio_col1, ratio_col2, sort
         plt.xlabel(y_label)
 
     else:
-        print("tate_yoko_flagには'tate'か'yoko'を与えてください")
+        print("tate_yoko_flagには'tate'か'yoko'という文字列を与えてください")
 
 def check_string_length(df, col, threshold, num_of_display):
 
