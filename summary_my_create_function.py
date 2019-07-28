@@ -287,7 +287,6 @@ def create_frequency_ratio_graph(df, set_index_col, ratio_col1, ratio_col2, sort
         print("tate_yoko_flagには'tate'か'yoko'という文字列を与えてください")
 
 def check_string_length(df, col, threshold, num_of_display):
-
     '''
     関数内容
     ・指定カラム(object型)の各要素の文字列の長さを閾値として、閾値未満のレコードのみ抽出する関数(同時に行列数、先頭から指定行数のレコードも表示する)
