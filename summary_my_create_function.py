@@ -380,7 +380,6 @@ def judge_include_value(df, value, base_col):
     '''
     関数内容
     ・指定したカラムの値が別のカラムの値の中に含まれているかどうかを判定する関数
-
     Input
     ・df :該当データフレーム
     ・value :含まれているかどうか判定したい値(str)
