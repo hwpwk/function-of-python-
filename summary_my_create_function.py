@@ -202,7 +202,6 @@ def judge_duplication_of_two_columns(df, col1, col2, col3):
     ・df:データフレーム
     ・co1, col2:重複判定したい2つのカラム
     ・col3:カウントしたいカラム(重複判定したいだけなのでdfに格納されているどのカラムでも問題ない)
-    
     '''
     if len(df) == len(df.groupby([col1, col2])[[col3]].count()):
         print(col1 + 'と' + col2 +'の組み合わせに重複はありません。')
