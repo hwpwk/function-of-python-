@@ -721,7 +721,6 @@ def calc_groupby_median(df, col1, col2, main_col):
     # 件数を降順にする
     df = df.reset_index().sort_values('件数', ascending=False)
 
-    
     return df
 
 def create_mean_pivot_table(df, index, columns, values):
