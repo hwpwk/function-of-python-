@@ -382,7 +382,6 @@ def judge_include_value(df, value, base_col):
     ・df :該当データフレーム
     ・value :含まれているかどうか判定したい値(str)
     ・base_col : カラム名(このカラムの値の中にvalueが含まれているかどうかを判定)(str)
-
     Returns
     ・type : 要素が含まれていれば「1」、含まれていなければ「0」を返す(str)
 
