@@ -96,7 +96,7 @@ def create_frequency_distribution(df, col, rename_col):
 def create_frequency_distribution_sort_col(df, col, rename_col):
     '''
     関数内容
-    ・度数分布表(カラム名昇順バージョン)を作成する関数
+    ・度数分布表(要素の名前昇順バージョン)を作成する関数
     Input
     ・df:該当データフレーム
     ・col:度数、累積度数、相対度数、累積相対度数を算出したいカラム
