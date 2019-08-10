@@ -123,7 +123,8 @@ def create_pareto_chart(df, col, fontsize, rotation):
     関数使用方法
     ・create_pareto_chart(freq_micro_meishi_df, '品詞小分類', 18, 90)
     '''
-    plt.rcParams['font.size'] = fontsize#x軸y軸の文字サイズを調整
+    #x軸y軸の文字サイズを調整
+    plt.rcParams['font.size'] = fontsize
 
     fig, ax1 = plt.subplots(figsize=(20,12))
     data_num = len(df)
