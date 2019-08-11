@@ -181,7 +181,8 @@ def complement_na_from_oneside(df, col1, col2, new_col):
     ・merge_df2 = complement_na_from_oneside(merge_df2, 'G番号', 'G', 'G番号_new').rename(columns={'G番号_new':'G番号'})
     '''
     df[new_col] = np.where(df[col1].notnull(), df[col1], np.where(df[col2].notnull(), df[col2], np.nan))
-    df = df.drop([col1, col2], axis=1)# 補完に使ったカラム、元のカラムを削除
+    # 補完に使ったカラム、元のカラムを削除
+    df = df.drop([col1, col2], axis=1)
     return df
 
 def complement_na_from_oneside_3col(df, col1, col2, col3, new_col):
