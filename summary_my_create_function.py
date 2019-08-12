@@ -388,7 +388,6 @@ def judge_include_value(df, value, base_col):
     ・type : 要素が含まれていれば「1」、含まれていなければ「0」を返す(str)
     関数使用方法
     ・df['flag'] = [judge_include_number(df, value, 'id_b') for value in df['id'].tolist()]
-
     '''
 
     base_list = df[base_col].tolist()
