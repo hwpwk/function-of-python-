@@ -307,7 +307,6 @@ def check_string_length(df, col, threshold, num_of_display):
 
     return under_threshold_df
 
-
 def change_micro_code_from_string_length(df, threshold=5):
     '''
     関数内容
