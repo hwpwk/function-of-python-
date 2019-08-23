@@ -146,8 +146,8 @@ def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_labe
     関数内容
     ・2つの棒グラフを並べて可視化する関数
     関数使用方法
-    ・compare_bar_graph(freq_u_buy_df, freq_u_sell_df, '格_b', '格_s', '度数', '度数',
-    [i for i in range(1,11)], '格', '企業数', '企業数(b側)', '企業数(s側)'
+    ・compare_bar_graph(
+    freq_u_buy_df, freq_u_sell_df, '格_b', '格_s', '度数', '度数',[i for i in range(1,11)], '格', '企業数', '企業数(b側)', '企業数(s側)'
     )
     '''
     df = df.astype({x_col:int}).sort_values(x_col)
