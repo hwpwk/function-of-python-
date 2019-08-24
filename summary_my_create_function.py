@@ -301,6 +301,7 @@ def check_string_length(df, col, threshold, num_of_display):
     '''
 
     df['文字列の長さ'] = df[col].map(lambda x: len(str(x)))
+    
     under_threshold_df = df[df['文字列の長さ'] < threshold]
 
     display(under_threshold_df.shape, under_threshold_df.head(num_of_display))
