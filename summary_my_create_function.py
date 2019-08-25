@@ -299,7 +299,6 @@ def check_string_length(df, col, threshold, num_of_display):
     関数使用方法
     ・check_string_length(df, 'コード', 5, 10)
     '''
-
     df['文字列の長さ'] = df[col].map(lambda x: len(str(x)))
     
     under_threshold_df = df[df['文字列の長さ'] < threshold]
