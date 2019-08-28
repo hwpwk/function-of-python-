@@ -247,7 +247,6 @@ def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_labe
     labels=[legend1, legend2]
     plt.legend(labels)
 
-
 def create_frequency_ratio_graph(df, set_index_col, ratio_col1, ratio_col2, sort_col, y_label, tate_yoko_flag, tate_size, yoko_size, int_flag, fontsize=18):
     '''
     関数内容
