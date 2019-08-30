@@ -210,7 +210,6 @@ def judge_duplication_of_two_columns(df, col1, col2, col3):
     else:
         print(col1 + 'と' + col2 +'の組み合わせに重複があります。')
 
-
 def compare_bar_graph(df, df1, x_col, x1_col, y_col, y1_col, xticks_list, x_label, y_label, legend1, legend2, int_flag, fontsize=18, rotation=90):
     '''
     関数内容
