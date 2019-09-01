@@ -404,7 +404,6 @@ def save_excel(df, string):
 
     return out_df[['取引先']].to_excel('取引先カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
 
-
 def save_col_name_df(df, name):
     '''
     関数の内容
