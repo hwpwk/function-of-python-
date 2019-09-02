@@ -349,7 +349,6 @@ def extract_contains_string_df(df, col, string):
     　del_list = ['口', '工', '幹', '破産']
       kouza_df, kou_df, kan_df, hasan_df = [extract_contains_string_df(all_df2, '名前', string) for string in del_list]
     '''
-
     out_df = df[df[col].str.contains(string, na=False)]
 
     return out_df
