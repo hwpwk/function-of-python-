@@ -564,7 +564,6 @@ def add_judge_str_col(df, col1, col2, new_col_name):
     関数使用方法
      ・df1 = add_judge_str_col(df, 'b', 's', 'is_0_flag')
     '''
-
     df[new_col_name] = np.where(((df[col1] == '0') & (df[col2] == '0')), 0, 1)
     # numpyでは文字列型を使うことができないのでここで文字列型に変換
     df[new_col_name] = df[new_col_name].astype(str)
