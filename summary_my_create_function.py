@@ -367,7 +367,6 @@ def save_excel(df, string, col='取引先名漢字'):
     Input
       string:特定文字列 or 特定正規表現
     '''
-
     out_df = df[df[col].str.contains(string, na=False)]
 
     return out_df[[col]].to_excel(col + 'カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
