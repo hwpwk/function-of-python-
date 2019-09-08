@@ -782,7 +782,6 @@ def calc_magnification(numerator_col, denominator_col):
 
     return ratio
 
-
 def text_to_dataframe(text, separation, col_names:list):
     '''
     関数内容
