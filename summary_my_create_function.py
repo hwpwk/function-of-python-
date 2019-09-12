@@ -675,8 +675,7 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
     buy_sell_list = [[x, y] for x, y in itertools.product(diff_buy_list, diff_sell_list)]
 
     '''組み合わせの総当たり分と各カラム=0(or 0.0)を格納したデータフレームを作成'''
-    add_df = pd.DataFrame(buy_sell_list,
-                          columns=[code_buy_col, code_sell_col])
+    add_df = pd.DataFrame(buy_sell_list,columns=[code_buy_col, code_sell_col])
     add_df['件数'] = 0
     add_df['成約数'] = 0
     add_df['倍率'] = 0.0
