@@ -743,7 +743,6 @@ def calc_magnification(numerator_col, denominator_col):
     関数使用方法
     ・df['売上高/売上高_倍率'] = df.apply(lambda x: calc_magnification(x['売上高_buy'], x['売上高_sell']), axis=1)
     '''
-
     ratio = -1
 
     if (str(numerator_col).replace('.', '').isdecimal()) and (str(denominator_col).replace('.', '').isdecimal()):
