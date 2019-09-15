@@ -511,7 +511,6 @@ def add_value_flag_to_df(df, name, raw_df, key_col):
     使い方
     　tmp_merge_df = add_value_flag(tmp_df, 'dummy', tmp_raw_df, 'CIF')
     '''
-
     new_col = 'is_' + name + '_flag'
 
     df[new_col] = '1'
