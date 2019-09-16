@@ -691,7 +691,6 @@ def calc_groupby_median(df, col1, col2, main_col):
     関数内容
     ・2つのカラム(col1,col2)の組み合わせ毎に件数、成約数、成約率、main_colに指定したカラムの中央値を算出する関数
     '''
-
     df = df[['success', col1, col2, main_col]]
     df['件数'] = df['success']
     df['成約数'] = df['success']
