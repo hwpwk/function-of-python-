@@ -727,7 +727,6 @@ def create_add_num_heatmap(pivot_df, context):
     sns.set_context(context)
     sns.heatmap(pivot_df.sort_index(ascending=False), annot=True, fmt='g', square=True, cmap = 'coolwarm')
 
-
 # 倍率を算出する関数1
 def calc_magnification(numerator_col, denominator_col):
     '''
