@@ -622,7 +622,6 @@ def design_range(col, new_col, num, df=cross_df):
     g_as_df = cross_df.groupby('a_s_mag_cluster')[['倍率']].mean().sort_values('倍率').reset_index()
     g_as_df['資産/売上高_倍率クラスター'] = range(0, len(g_as_df))
     '''
-
     from sklearn.cluster import KMeans
 
     # reshape(1, -1)を使わないとExpected 2D array, got 1D array insteadとエラーが発生する
