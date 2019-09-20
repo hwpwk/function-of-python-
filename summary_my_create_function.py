@@ -30,7 +30,6 @@ def calc_pick(df, col):
     print(col + 'カラムに紐づいたレコード数は{}'.format((len(df) - (df[col].isnull().sum()))))
     print(col + 'カラムに紐づいた割合は{:.2%}'.format((len(df) - (df[col].isnull().sum())) / len(df)))
 
-
 def calc_drop_df_pick(df, drop_df):
     
     print('欠損値がないレコード数は{}'.format((len(drop_df))))
