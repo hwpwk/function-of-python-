@@ -419,7 +419,6 @@ def save_col_name_df(df, name):
         name + 'のカラム一覧':df_col_list
     })
 
-
     return col_df.head(), col_df.to_excel(name + 'のカラム一覧.xlsx', index=False)
 
 def exclude_outliers(df, col):
