@@ -441,7 +441,6 @@ def exclude_outliers(df, col):
 
     return df
 
-
 def flag_outliers(df, col):
     '''
     関数内容
