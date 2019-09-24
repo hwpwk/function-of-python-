@@ -411,7 +411,6 @@ def save_col_name_df(df, name):
     関数使用方法
      ・save_col_name_df(master_df, 'マスタデータ')
     '''
-
     df_col_list = df.columns.tolist()
 
     col_df = pd.DataFrame({
