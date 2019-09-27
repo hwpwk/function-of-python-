@@ -444,7 +444,6 @@ def flag_outliers(df, col):
     関数内容
     ・外れ値にフラグをつけ削除する関数
     '''
-
     # 第一四分位数、第三四分位数
     q1 = df[col].describe()['25%']
     q3 = df[col].describe()['75%']
