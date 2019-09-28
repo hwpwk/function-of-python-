@@ -363,7 +363,7 @@ def save_excel(df, string, col='取引先名漢字'):
     関数内容
     ・指定カラムに特定文字が含まれているレコードのみ抽出してxlsxファイルで出力する関数
     Input
-      string:特定文字列 or 特定正規表現
+    ・string:特定文字列 or 特定正規表現
     '''
     out_df = df[df[col].str.contains(string, na=False)]
 
