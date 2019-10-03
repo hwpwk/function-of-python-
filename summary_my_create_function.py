@@ -56,7 +56,7 @@ def calc_kaikyu_sizewidth(df, col):
 
     print('度数分布表の階級数は{}です。'.format(class_size),'階級幅は{}です。'.format(class_width))
 
-def freq_cnt (df):
+def freq_cnt(df):
     '''
     関数内容
     ・['std']カラムの数値の大きさによってグループ分けする関数
