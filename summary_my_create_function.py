@@ -343,7 +343,7 @@ def extract_contains_string_df(df, col, string):
     関数内容
     ・指定カラムに特定文字が含まれているレコードのみ抽出する関数
     関数使用方法
-    ・extract_contains_string_df(all_df2, '名前', '口')
+    ・extract_contains_string_df(all_df, '名前', '口')
     　del_list = ['口', '工', '幹', '破']
       kouza_df, kou_df, kan_df, hasan_df = [extract_contains_string_df(all_df2, '名前', string) for string in del_list]
     '''
