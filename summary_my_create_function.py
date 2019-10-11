@@ -565,7 +565,6 @@ def add_judge_str_3col(df, col1, col2, col3, new_col_name):
      ・col2：「'0'」or「'1'」2つの値が含まれるcol1、col3とは別のカラム
      ・col3：「'0'」or「'1'」2つの値が含まれるcol1、col2とは別のカラム
      ・new_col_name：新規カラム名
-
     Return
      ・指定カラムの値がどちらも「'0'」であるなら0を、そうでなければ1を付与した新規カラムが追加されたデータフレーム
 
