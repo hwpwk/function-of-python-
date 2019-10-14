@@ -566,7 +566,6 @@ def add_judge_str_3col(df, col1, col2, col3, new_col_name):
      ・new_col_name：新規カラム名
     Return
      ・指定カラムの値がどちらも「'0'」であるなら0を、そうでなければ1を付与した新規カラムが追加されたデータフレーム
-
     関数使用方法
      ・df1 = add_judge_str_3col(df, 'b', 's', 'c', is_0_flag')
     '''
