@@ -613,6 +613,7 @@ def design_range(col, new_col, num, df=cross_df):
     # reshape(1, -1)を使わないとExpected 2D array, got 1D array insteadとエラーが発生する
     # 参考：http://noralog.com/data-analytics-1
     mag_array = np.array(df[col].tolist()).reshape(1, -1)
+    
     mag_array_T = mag_array.T
 
     pred = KMeans(n_clusters=num).fit_predict(mag_array_T)
