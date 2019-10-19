@@ -519,7 +519,6 @@ def add_judge_col(df, col1, col2, new_col_name):
      ・col1：「0」or「1」2つの値が含まれるcol2とは別のカラム
      ・col2：「0」or「1」2つの値が含まれるcol1とは別のカラム
      ・new_col_name：新規カラム名
-
     Return
      ・指定カラムの値がどちらも「0」であるなら0を、そうでなければ1を付与した新規カラムが追加されたデータフレーム
 
