@@ -750,7 +750,7 @@ def calc_magnification(numerator_col, denominator_col):
     '''
     if denominator_col == 0:
         ratio = -1
-    elif np.isnan(numerator_col)  or np.isnan(denominator_col):
+    elif np.isnan(numerator_col) or np.isnan(denominator_col):
         ratio = -1
     else:
         ratio = numerator_col / denominator_col
