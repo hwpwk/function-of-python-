@@ -521,7 +521,6 @@ def add_judge_col(df, col1, col2, new_col_name):
      ・new_col_name：新規カラム名
     Return
      ・指定カラムの値がどちらも「0」であるなら0を、そうでなければ1を付与した新規カラムが追加されたデータフレーム
-
     関数使用方法
      ・df1 = add_judge_col(df, 'b', 's', 'is_0_flag')
     '''
