@@ -646,7 +646,7 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
     sell_list = df1[code_sell_col].drop_duplicates().tolist()
     '''買収側業種コード、売却側業種コードを比較し、どちらか一方にしかない値を抽出'''
     diff_set = set(buy_list)^set(sell_list)#2つのリストを比較し、重複していない要素のみ抽出
-    diff_list = list(diff_set)#  set型をlist型に変換
+    diff_list = list(diff_set)#set型をlist型に変換
     '''抽出した重複していない要素のうち、買収側業種コードに含まれていない要素のみ抽出'''
     diff_buy_list= list(set(diff_list) - set(buy_list))
     '''抽出した重複していない要素のうち、売却側業種コードに含まれていない要素のみ抽出'''
