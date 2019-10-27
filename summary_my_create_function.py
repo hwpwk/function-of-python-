@@ -715,7 +715,7 @@ def create_add_num_heatmap(pivot_df, context):
 def calc_magnification(numerator_col, denominator_col):
     '''
     関数内容
-    ・分母の値が「0」もしくは分子、分母のどちらかが欠損値の場合は倍率を「-1」、それ以外は倍率を算出する関数
+    ・分母の値が「0」、もしくは分子、分母のどちらかが欠損値の場合は倍率を「-1」、それ以外は倍率を算出する関数
     Input
     ・numerator_col:倍率算出時に分子にしたいカラム
     ・denominator_col:倍率算出時に分母にしたいカラム
