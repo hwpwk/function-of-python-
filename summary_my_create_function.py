@@ -407,7 +407,7 @@ def judge_include_value(df, value, base_col):
 def save_excel(df, string):
     '''
     関数内容
-    ・[取引先]カラムに特定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数
+    ・[取引先]カラムに指定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数
     '''
     out_df = df[df['取引先'].str.contains(string, na=False)]
 
