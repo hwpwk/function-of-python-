@@ -597,7 +597,7 @@ def create_compare_values_flag(col1, col2):
     ・col1：col2に指定した以外のカラム
     ・col2：col1に指定した以外のカラム
     関数使用方法
-    ・cross_df['比較_flag'] = cross_df.apply(lambda x: create_compare_values_flag(x['buy'], x['sell']), axis=1)
+    ・df['比較_flag'] = df.apply(lambda x: create_compare_values_flag(x['buy'], x['sell']), axis=1)
     '''
     if col1 < col2:
         flag = 0
