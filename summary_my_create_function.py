@@ -785,3 +785,29 @@ def text_to_dataframe(text, separation, col_names:list):
     text_df = pd.read_csv(text, sep=separation, names=col_names)
 
     return text_df
+
+def create_columns_dataframe(files):
+    
+    '''
+    関数内容
+    ・各ファイルのカラム名を1ファイルごとに抽出し、データフレームに格納する関数
+    Input
+    ・files：読み込みたいファイルのパス名が格納されているリスト
+    関数使用方法
+    ・cf_df = create_columns_dataframe(files)
+    '''
+    
+    df_list=[]
+    
+    for file in files:
+        df = pd.read_excel(file)
+        col_df = pd.DataFrame({
+            str(file)+'_col':df.columns.tolist()
+        })
+        df_list.append(col_df)
+
+
+    concat_df = pd.concat(df_list, axis=1)
+        
+        
+    return concat_df
