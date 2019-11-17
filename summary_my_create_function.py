@@ -390,11 +390,11 @@ def judge_include_value(df, value, base_col):
     関数内容
     ・指定したカラムの値が別のカラムの値の中に含まれているかどうかを判定する関数
     Input
-    ・df :該当データフレーム
-    ・value :含まれているかどうか判定したい値(str)
-    ・base_col :カラム名(このカラムの値の中にvalueが含まれているかどうかを判定)(str)
+    ・df:該当データフレーム
+    ・value:含まれているかどうか判定したい値(str)
+    ・base_col:カラム名(このカラムの値の中にvalueが含まれているかどうかを判定)(str)
     Return
-    ・type : 要素が含まれていれば「1」、含まれていなければ「0」を返す(str)
+    ・type:要素が含まれていれば「1」、含まれていなければ「0」を返す(str)
     関数使用方法
     ・df['flag'] = [judge_include_number(df, value, 'id_b') for value in df['id'].tolist()]
     '''
