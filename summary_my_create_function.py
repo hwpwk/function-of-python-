@@ -787,7 +787,6 @@ def text_to_dataframe(text, separation, col_names:list):
     return text_df
 
 def create_columns_dataframe(files):
-    
     '''
     関数内容
     ・各ファイルのカラム名を1ファイル毎に抽出し、データフレームに格納する関数
