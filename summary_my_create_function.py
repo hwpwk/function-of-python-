@@ -32,6 +32,29 @@ def basic_check(df):
     print('--------------------------------------------')
     print('データフレーム末尾5行')
     display(df.tail())
+    
+def basic_check2(df):
+    '''
+    関数内容
+    読み込んだデータフレームの
+    ・行と列の数
+    ・各カラムの欠損値の数
+    ・各カラムのデータの型
+    ・先頭&末尾から5行目まで
+    を確認する関数
+    Input
+    ・df:データフレーム
+    '''
+    print('行と列の長さ\n{}'.format(df.shape))
+    print('-'*50)
+    print('各カラムの欠損値の数\n{}'.format(df.isnull().sum()))
+    print('-'*50)
+    print(df.info())
+    print('-'*50)
+    print('各カラムのデータ型\n{}'.format(df.dtypes))
+    print('-'*50)
+    print('各カラムのユニークな値の数\n{}'.format(df.nunique()))
+    display(df.head(), df.tail())
 
 def calc_pick(df, col):
     '''
