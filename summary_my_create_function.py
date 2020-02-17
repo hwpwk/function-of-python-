@@ -175,6 +175,25 @@ def create_frequency_distribution_sort_col(df, col, rename_col):
 
     return df
 
+def create_frequency_distribution2(df, col, rename_col):
+    '''
+    関数内容
+    ・金額、累積金額、金額比率、累積金額比率を算出する関数
+    Input
+    ・df:該当データフレーム
+    ・col:金額、累積金額、金額比率、累積金額比率を算出したいカラム
+    ・rename_col:reset_indexメソッド後にカラム名[index]から変更したい「名称」
+    関数使用方法
+    ・create_frequency_distribution2(s_df,'金額','金額')
+    '''
+    #df = df[col].value_counts().reset_index().rename(columns={'index':rename_col, col:'度数'})
+    df['累積金額'] = df[col].cumsum()
+    df['金額比率'] = round((df[col] / sum(df[col])), 3)
+    df['累積金額比率'] = round((df['累積金額'] / sum(df[col])), 3)
+
+    return df
+
+
 def create_pareto_chart(df, col, fontsize, rotation):
     '''
     関数内容
