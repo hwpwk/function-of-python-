@@ -880,3 +880,31 @@ def create_columns_dataframe(files):
         
         
     return concat_df
+
+def stored_read_xlsx_and_csv_files_in_list(file_path_list):
+    '''
+    関数内容
+    ・xlsxとcsvファイルを読み込みリストに格納する関数(1、3行目をスキップして読み込んでいる)
+    Input
+    ・file_path_list：データが格納されているパスを格納したリスト
+    関数使用方法
+    ・df_list = stored_read_xlsx_and_csv_files_in_list(files)
+    '''
+    
+    df_list = []
+    
+    for file_name in file_path_list:
+        
+        if '.xlsx' in file_name:
+            df1 = pd.read_excel(file_name, sheet_name='单体报表2002', skiprows=[0,2])
+            df_list.append(df1)
+
+        elif '.csv' in file_name:
+            df2 = pd.read_csv(file_name, skiprows=[0,2], encoding='cp932', engine='python')
+            df_list.append(df2)
+        
+        else:
+            print('コードに誤りがあります。')
+    
+    return df_list
+
