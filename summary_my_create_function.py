@@ -429,7 +429,7 @@ def extract_contains_string_df(df, col, string):
     関数使用方法
     ・extract_contains_string_df(all_df, '名前', '口')
     
-    　del_list = ['口', '工', '幹', '破']
+    　del_list = ['口', '工']
      
       kouza_df, kou_df, kan_df, hasan_df = [extract_contains_string_df(all_df2, '名前', string) for string in del_list]
     '''
@@ -444,7 +444,7 @@ def diff_df_length(before_df, after_df):
     '''
     display('削除したレコード数は{}レコードです。'.format(len(before_df) - len(after_df)))
 
-def save_excel(df, string, col='取引先名漢字'):
+def save_excel(df, string, col='名'):
     '''
     関数内容
     ・指定カラムに特定文字が含まれているレコードのみ抽出してxlsxファイルで出力する関数
@@ -478,11 +478,11 @@ def judge_include_value(df, value, base_col):
 def save_excel(df, string):
     '''
     関数内容
-    ・[取引先]カラムに指定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数
+    ・[取引]カラムに指定文字が含まれているレコードのみ抽出しxlsxファイルで出力する関数
     '''
-    out_df = df[df['取引先'].str.contains(string, na=False)]
+    out_df = df[df['取引'].str.contains(string, na=False)]
 
-    return out_df[['取引先']].to_excel('取引先カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
+    return out_df[['取引']].to_excel('取引カラムに「' + string +'」 が含まれるレコード.xlsx', index=False)
 
 def save_col_name_df(df, name):
     '''
@@ -689,7 +689,7 @@ def design_range(col, new_col, num, df=cross_df):
     ・cross_df = design_range('倍率', 'a_s_mag_cluster', 100)
     ※なお、この後にはクラスタの番号が倍率の大小を表していないのでクラスタに分ける前の値を昇順にしてからクラスタの名称を変更することが多い
     g_as_df = cross_df.groupby('a_s_mag_cluster')[['倍率']].mean().sort_values('倍率').reset_index()
-    g_as_df['資産/売上高_倍率クラスター'] = range(0, len(g_as_df))
+    g_as_df['クラスタ'] = range(0, len(g_as_df))
     '''
     from sklearn.cluster import KMeans
 
@@ -725,18 +725,18 @@ def add_complement_df(df1, code_buy_col, code_sell_col):
     関数内容
     ・買収側業種名と売却側業種名の要素が共通になるよう補完し、その補完した要素を元データフレームに追加する関数
     '''  
-    # 買収側業種コードのユニークな要素をリストで抽出
+    # 買収コードのユニークな要素をリストで抽出
     buy_list = df1[code_buy_col].drop_duplicates().tolist()
-    # 売却側業種コードのユニークな要素をリストで抽出
+    # 売却コードのユニークな要素をリストで抽出
     sell_list = df1[code_sell_col].drop_duplicates().tolist()
-    '''買収側業種コード、売却側業種コードを比較し、どちらか一方にしかない値を抽出'''
+    '''買収コード、売却コードを比較し、どちらか一方にしかない値を抽出'''
     diff_set = set(buy_list)^set(sell_list)#2つのリストを比較し、重複していない要素のみ抽出
     diff_list = list(diff_set)#set型をlist型に変換
-    '''抽出した重複していない要素のうち、買収側業種コードに含まれていない要素のみ抽出'''
+    '''抽出した重複していない要素のうち、買収コードに含まれていない要素のみ抽出'''
     diff_buy_list= list(set(diff_list) - set(buy_list))
-    '''抽出した重複していない要素のうち、売却側業種コードに含まれていない要素のみ抽出'''
+    '''抽出した重複していない要素のうち、売却コードに含まれていない要素のみ抽出'''
     diff_sell_list= list(set(diff_list) - set(sell_list))
-    '''買収側業種コード、売却側業種コードに含まれていない要素の組み合わせの総当たりを抽出'''
+    '''買収コード、売却コードに含まれていない要素の組み合わせの総当たりを抽出'''
     import itertools
     buy_sell_list = [[x, y] for x, y in itertools.product(diff_buy_list, diff_sell_list)]
 
