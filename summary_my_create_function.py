@@ -1,3 +1,73 @@
+def get_columns_info(df, topN=3):
+    '''
+    カラム毎の「データ型」「欠損値数」「欠損率」「ユニーク数」「ユニーク率」「主な値」をまとめたデータフレームを作成する関数
+    
+    Parameters
+    ----------
+    df：dataframe
+        対象のデータフレーム
+    topN : int
+        確認したい「主な値」の数
+    '''
+    
+    col_list = df.columns.tolist()
+    data_type_list = df.dtypes.tolist()
+    col_unique_num_list = df.nunique().tolist()
+    unique_num_per_list = [str(round(num/df.shape[0],2)*100)+'%' for num in col_unique_num_list]
+    null_num_list = df.isnull().sum().tolist()
+    null_num_per_list = [str(round(num/df.shape[0],2)*100)+'%' for num in null_num_list]
+    main_values_list = [df[col].value_counts().index[:topN].tolist() for col in df.columns.tolist()]
+    main_values_count_list = [df[col].value_counts().values[:topN].tolist() for col in df.columns.tolist()]
+    main_values_ratio_list = []
+    main_values_ratio_decimal_array = [np.round(np.array(df[col].value_counts().values[:topN].tolist())/df.shape[0], decimals=2) for col in df.columns.tolist()]
+    for ratio_array in main_values_ratio_decimal_array:
+        # 値を%単位に変換
+        ratio_percent_array = ratio_array*100
+        # %単位に変換した値の末尾に「%」を追加
+        ratio_percent_list = list(map(lambda x: str(x) + '%', ratio_percent_array.tolist()))
+        main_values_ratio_list.append(ratio_percent_list)
+    
+    max_num_list = []
+    min_num_list = []
+    mean_num_list = []
+    median_num_list = []
+    
+    col_dtype_dict = {col:dtype for col, dtype in zip(df.dtypes.index, df.dtypes.values)}
+    
+    for col, dtype in col_dtype_dict.items():
+        if  dtype != 'object':
+            max_num_list.append(df[col].max())
+            min_num_list.append(df[col].min())
+            mean_num_list.append(df[col].mean())
+            median_num_list.append(df[col].median())          
+        else:
+            max_num_list.append(np.nan)
+            min_num_list.append(np.nan)
+            mean_num_list.append(np.nan)
+            median_num_list.append(np.nan)  
+  
+
+    summary_df = pd.DataFrame({
+        'カラム名':col_list,
+        'データ型':data_type_list,  
+        'ユニーク数':col_unique_num_list,
+        'ユニーク率':unique_num_per_list,
+        '欠損値数':null_num_list,
+        '欠損率':null_num_per_list,
+        '主な値(件数上位' + str(topN) + 'つ)':main_values_list,
+        '主な値(件数上位' + str(topN) + 'つ)の件数':main_values_count_list,
+        '主な値(件数上位' + str(topN) + 'つ)の件数割合':main_values_ratio_list,
+        '最大値(数値型列のみ取得)':max_num_list,
+        '最小値(数値型列のみ取得)':min_num_list,
+        '平均値(数値型列のみ取得)':mean_num_list,
+        '中央値(数値型列のみ取得)':median_num_list
+        
+    })
+    
+    print(f'行数:{df.shape[0]}行', f'列数:{df.shape[1]}列')
+
+    return summary_df
+
 def col_data_in_dataframe(df):
     '''
     関数内容
