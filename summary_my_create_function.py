@@ -1066,7 +1066,8 @@ def calc_cv(col, population=True):
         return cv
     else:
         if population:
-            cv = np.std(col, ddof=0) / np.average(col)
+            cv = round(np.std(col, ddof=0) / np.average(col), 3)
         else:
-            cv = np.std(col, ddof=1) / np.average(col)
+            cv = round(np.std(col, ddof=1) / np.average(col), 3)
         return cv
+    
