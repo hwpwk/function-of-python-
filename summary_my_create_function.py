@@ -1049,3 +1049,24 @@ def stored_read_xlsx_and_csv_files_in_list(file_path_list):
     
     return df_list
 
+def calc_cv(col, population=True):
+    '''
+    変動係数を算出する関数
+    
+    Parameters
+    ----------
+    col：str
+        変動係数を算出したい値が格納されている列名
+    population : bool
+        母標準偏差を使用する場合はTrue、標本標準偏差を使用する場合はFalse
+    '''
+    # 分母が0の場合はNANを返す
+    if  np.average(col)==0:
+        cv = np.nan
+        return cv
+    else:
+        if population:
+            cv = np.std(col, ddof=0) / np.average(col)
+        else:
+            cv = np.std(col, ddof=1) / np.average(col)
+        return cv
